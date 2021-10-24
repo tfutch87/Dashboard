@@ -1,5 +1,7 @@
+
 const express = require('express');
 const app = express();
+app.set('view engine' , 'ejs');
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
@@ -44,6 +46,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use(myOwnMiddleWare);
+
 
 app.use('/', postRoutes)
 

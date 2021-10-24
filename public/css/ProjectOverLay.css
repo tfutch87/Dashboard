@@ -1,0 +1,42 @@
+.project-form-cont{
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    display: block;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease-out, visibility 250ms ease-out;
+
+}
+
+.show_overlay{
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: opacity 500ms ease-in, visibility 250ms ease ; 
+}
+
+#closeForm:hover{
+    cursor: pointer;
+
+}
+
+.overLay_NewProject{
+
+    content: '';
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease-out, visibility 250ms ease-out;
+
+
+}

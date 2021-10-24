@@ -44,14 +44,10 @@ exports.getCustomer = (req, res) => {
 
 exports.getProjects = (req, res) => {
 
-    const projects =  Hico_Project.find()
-    .then((projects) => {
+    Hico_Project.find().then((projects) => {
 
-        let project_notes = projects[0].Project_Notes;
-        let project_name = projects[0].ProjectName;
- 
-     res.send("<div class='container' style='width: 20%; background-color: #f9f9f9f9'> <h1> PROJECT name </h1>" + project_name + " <br>" + "<h1> Project Details </h1>" + project_notes + "</div>")
-     
+     res.render("project", {ProjectName: projects })
+   
  
     })
     .catch((err => console.log(err.message)));
@@ -93,7 +89,7 @@ exports.createProject = (req, res) => {
                     error: err
                 });
             }
-            res.send("Success")
+            res.redirect("/projects")
 
       });
 
@@ -112,3 +108,6 @@ exports.createEmployee = async (req, res) => {
        res.status(400).json({success: false, message:err.message});
     }
  }
+
+
+ 
