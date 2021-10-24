@@ -315,3 +315,25 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  .fmessage{
+
+    display: none;
+    margin-bottom: 0;
+
+  }
+
+
+.smessage{
+      margin-bottom: 0;
+  }
+
+
+  input[type=checkbox]:checked + p {
+
+    color: red;
+  }
+
+  p{
+      margin-bottom: 0;
+  }

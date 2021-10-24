@@ -1,3 +1,4 @@
+const { NONAME } = require("dns");
 
 /* global bootstrap: false */
 (function () {
@@ -43,10 +44,21 @@ close qoute */
 
 function closeQoute(){
 
-    let closeQoute = document.getElementById('closeQoute');
-
+    let smessage = document.querySelector('.smessage');
+    let fmessage = document.querySelector('.fmessage')
     // closeQoute.style.visibility = "hidden"
 
-    gsap.to(closeQoute, {opacity: 0});
+    fmessage.style.display = "inline-block";
+    let tl = gsap.timeline();
+
+    gsap.to(smessage, {opacity: 0});
+    
+
+    setTimeout(function(){
+
+      tl.from(fmessage, {opacity: 1}).to(fmessage, {x: -500}).to(smessage, {y: 1000});
+
+  }, 2000);
+
 
 }

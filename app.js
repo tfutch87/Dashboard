@@ -19,7 +19,7 @@ mongoose.connect(
 .then(() => console.log('DB Connected'))
  
 mongoose.connection.on('error', err => {
-  console.log(`DB connection error: ${err.message}`)
+  // console.log(`DB connection error: ${err.message}`)
 });
 
 
@@ -30,7 +30,7 @@ const postRoutes = require('./routes/post');
 
 
 const myOwnMiddleWare = (req, res, next) => {
-    console.log('i am middleware');
+    // console.log('i am middleware');
     next();
 };
 

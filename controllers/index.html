@@ -1,259 +1,50 @@
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" 
-        integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/sidebars.css" rel="stylesheet">
-</head>
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <div class="container-fluid">
-        <a class="navbar-brand display-1" href="#">FD</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
-
-<body>
-
-    <section id="closeQoute" class="container text-center bg-light">
-
-       <p > New Quote of the Day</p>
-    </section>
-
-
-    
-        <div class="container-fluid  mt-5 row">
-
-
-<!-- 
-left column -->
-            <div class="col-2 border-right left-column px-2">
-
-
-                <div class="d-flex flex-column bg-transparent">
-                   
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <svg class="bi me-2" width="16" height="16">
-
-                                </svg>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
-                                    <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
-                                    <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
-                                  </svg>
-                               <p>Dashboard </p> 
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
-                                    <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
-                                  </svg>
-                                <p> Orders</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
-                                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
-                                  </svg>
-                                <p> Products</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
-                                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                    <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
-                                  </svg>
-                                <p> Customers</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <hr>
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center  text-decoration-none dropdown-toggle"
-                            id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span id="profilePic"> <img src="img/profile.png" alt="mdo" width="32" height="32"
-                                    class="rounded-circle me-2"></span>
-                            <strong>Tyren</strong>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-
-<!-- 
-middle column -->
-            
-            <div  class="col-8 middle-column bg-transparent">
-                    <h3> Create New Project</h3>
-                <div class="row justify-content-start g-20">
-
-                    <div id="box" class="col-3">
-                        <form id="form" action="/projects" method="post">
-                            <div class="form-floating">
-                                <input class="form-control" id="name" name="ProjectName" type="text"
-                                    placeholder="name" autocomplete="off" />
-                                <label class="control-label " for="name">
-                                    Customer Name
-                                </label>
-
-                            </div>
-                            <div class="form-floating">
-
-                                <input class="form-control" id="Project_Notes" name="Project_Notes" type="text"
-                                    placeholder="name" autocomplete="off"/>
-                                <label class="control-label " for="Project_Notes">
-                                    Customer Notes
-                                </label>
-                            </div>
-                            <div class="form-floating">
-
-                                <select class="select" id="Status" name="Status" form="form">
-                                        
-                                    <option value="">Select the Project Status</option>
-                                    <option value="Open">Open</option>
-                                    <option value="Pending">Pending</option>
-                                    <option value="Follow-Up">Follow-Up</option>
-                                    <option value="Closed">Closed</option>
-                                    
-                                  </select>
-                               
-                            </div>
-                            <div class="form-floating">
-                                
-
-                                <input class="form-control" id="budget" name="budget" type="text"placeholder="name" autocomplete="off"/>
-                                <label class="control-label " for="budget">
-                                    Customer Budget
-                                </label>
-                                <button class="btn btn-primary " name="submit" type="submit"
-                                     > submit </button>
-                            </div>
-
-                            </form>
-
-                    </div>
-
-                  
-                    
-
-                 
-                </div>
-                
-            </div> 
-
-
-
-
-<!-- 
-right column -->
-            <div class="col-2 left-column border-left bg-transparent">
-                <div class="mb-4">
-            <H4 >Stats/Updates</H4>
-
-                <ul>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                </ul>
-          </div>
-          <div>
-            <H4  >Quick Links</H4>
-
-                <ul>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                    <li>all new links</li>
-                </ul>
-          </div>
-
-
-        </div>
-        
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" 
+            integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
        
-    
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/sidebars.css" rel="stylesheet">
+        <link href="css/ProjectOverLay.css" rel="stylesheet">
+        <link href="css/homePage.css" rel="stylesheet">
+    </head>
+    <body>
 
-    </div>
-    </div>
-    </div>
+<section class="d-flex">
+
+<!-- 
+    left side -->
+
+<div class="col-6 d-flex align-items-center justify-content-center login-left">
+
+</div>
+<!-- 
+right side -->
+
+<div class="col-6 gap-2 d-flex align-items-center flex-column justify-content-center login-right">
+
+  <p class="text-center mb-3">  Hi, Are You Ready </p>
+<div style="width: 50%;">
+    <form class="form-group" action="login" method="post">
+        <input class="input-group" type="text" name="email" placeholder="First Name">
+        <input class="input-group" type="password"  name="password" placeholder="******">
+        <button class="btn btn-primary"> Log In </button>
+    </form>
+</div>
 
 
-    <script src="/js/index.js"></script>
-    <script src="/jquery/jquery.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-        </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+</div>
+
+
+</section>
+
 </body>
 
 </html>

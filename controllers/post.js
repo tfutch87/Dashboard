@@ -1,14 +1,54 @@
 const Hico_Customer = require('../modules/post');
 const Hico_Project = require('../modules/createProject');
 const Employee = require('../modules/createEmployee');
+const newUser = require('../modules/userSchema');
 
+
+exports.homePage = (req, res) => {
+
+    // Hico_Customer.find({}, function(err, foundItems){
+
+        res.sendFile(__dirname + "/index.html");
+
+    // })
+
+};
+
+exports.newUser = (req, res) =>{
+
+    const new_User = new newUser(req.body);
+
+    console.log('Creating user: ', new_User);
+
+    new_User.save((err, result) => {
+        if(err) {
+            return res.status(400).json({
+                error: err
+            });
+        }
+
+
+        if(!req.body.password || req.body.password == "admin"){
+
+            res.redirect("/home")
+        } else{
+
+            res.sendFile(__dirname + "/index.html");
+        }
+
+       
+
+  });
+
+
+};
 
 
 exports.getPosts = (req, res) => {
 
     // Hico_Customer.find({}, function(err, foundItems){
 
-        res.sendFile(__dirname + "/index.html")
+        res.render("home");
 
     // })
 
@@ -81,7 +121,7 @@ exports.createProject = (req, res) => {
 
     const Project = new Hico_Project(req.body);
 
-    console.log('Creating Project: ', Project)
+    console.log('Creating Project: ', Project);
 
     Project.save((err, result) => {
             if(err) {
@@ -109,5 +149,16 @@ exports.createEmployee = async (req, res) => {
     }
  }
 
+// need to configure delete method.
+ // use ID to find the collect and delete it.
+ exports.Delete = (req, res) => {
 
- 
+    const Delete_ID = req.body.id;
+
+    console.log("made it");
+    res.redirect("/projects")
+
+   
+      
+
+};
