@@ -4,12 +4,16 @@ const app = express();
 app.set('view engine' , 'ejs');
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 // import mongoose
 const mongoose = require('mongoose');
 // load env variables
 const dotenv = require('dotenv');
 dotenv.config()
+
  
 //db connection
 mongoose.connect(
