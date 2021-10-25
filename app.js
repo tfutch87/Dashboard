@@ -1,13 +1,19 @@
+
 const express = require('express');
 const app = express();
+app.set('view engine' , 'ejs');
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 // import mongoose
 const mongoose = require('mongoose');
 // load env variables
 const dotenv = require('dotenv');
 dotenv.config()
+
  
 //db connection
 mongoose.connect(
@@ -17,7 +23,7 @@ mongoose.connect(
 .then(() => console.log('DB Connected'))
  
 mongoose.connection.on('error', err => {
-  console.log(`DB connection error: ${err.message}`)
+  // console.log(`DB connection error: ${err.message}`)
 });
 
 
@@ -28,7 +34,7 @@ const postRoutes = require('./routes/post');
 
 
 const myOwnMiddleWare = (req, res, next) => {
-    console.log('i am middleware');
+    // console.log('i am middleware');
     next();
 };
 
@@ -44,6 +50,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use(myOwnMiddleWare);
+
 
 app.use('/', postRoutes)
 

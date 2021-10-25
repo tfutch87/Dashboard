@@ -1,0 +1,155 @@
+<html lang="en">
+
+<%- include('header'); -%>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container-fluid">
+        <a class="navbar-brand display-1" href="#">FD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+  <section onclick="closeQoute()" id="closeQoute" class="container text-center bg-light">
+
+       <p > New Quote of the Day</p>
+    </section>
+
+<section class="container">
+<div class="d-flex mb-5 new-project align-items-center justify-content-end">
+<div>
+<div class="float-right mr-3">Number of Projects <span class="circle"> <%= ProjectName.length %> </span></div>
+</div>
+
+<div>
+<button onclick="open_project_form()" id="newProject" class="btn btn-primary">
+New Project
+</button>
+
+</div>
+</div>
+<table>
+  <tr>
+    <th>Project name</th>
+    <th>Project notes</th>
+    <th>Budget</th>
+    <th> Status </th>
+  </tr>
+
+ <% for(var i = 0; i < ProjectName.length; i++){ %>
+<tr>
+ 
+  <form method="POST" action="/delete"> 
+
+  
+  <td class="d-flex gap-3 align-items-center">
+  <input onChange="this.form.submit()" type="checkbox" for="<%= ProjectName[i].ProjectName %>" name="<%= ProjectName[i].ProjectName %> " value="<%= ProjectName[i].id %>">
+  <p class="mb-0"> <%=  ProjectName[i].ProjectName %> </p> </td>
+    <td><%= ProjectName[i].Project_Notes%> </td>
+   <td><%= ProjectName[i].budget%> </td>
+   <td><%= ProjectName[i].Status%> </td>
+ </tr>
+<% } %>
+  
+  </form>
+  
+  
+</table>
+
+
+<div class="overLay_NewProject">
+
+
+ <div id="box" class="col project-form-cont">
+<span onclick="close_project_form()" id="closeForm" class="float-right d-block"> X </span>
+
+                        <form id="form" action="/projects" method="post">
+                            <div class="form-floating">
+                                <input class="form-control" id="name" name="ProjectName" type="text"
+                                    placeholder="name" autocomplete="off" />
+                                <label class="control-label " for="name">
+                                    Customer Name
+                                </label>
+
+                            </div>
+                            <div class="form-floating">
+
+                                <input class="form-control" id="Project_Notes" name="Project_Notes" type="text"
+                                    placeholder="name" autocomplete="off"/>
+                                <label class="control-label " for="Project_Notes">
+                                    Customer Notes
+                                </label>
+                            </div>
+                            <div class="form-floating">
+
+                                <select class="select" id="Status" name="Status" form="form">
+                                        
+                                    <option value="">Select the Project Status</option>
+                                    <option value="Open">Open</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Follow-Up">Follow-Up</option>
+                                    <option value="Closed">Closed</option>
+                                    
+                                  </select>
+                               
+                            </div>
+                            <div class="form-floating">
+                                
+
+                                <input class="form-control" id="budget" name="budget" type="text"placeholder="name" autocomplete="off"/>
+                                <label class="control-label " for="budget">
+                                    Customer Budget
+                                </label>
+                                <button class="btn btn-primary " name="submit" type="submit"
+                                     > submit </button>
+                            </div>
+
+                            </form>
+
+                    </div>
+
+</div>
+
+</section>
+
+<%- include('footer'); -%>
+
+</body>
+
+
+</html>

@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 
   const ProjectSchema = new mongoose.Schema({
 
+    Status: {
+        type: String
+    },
     ProjectName: {
         type: String
     },
